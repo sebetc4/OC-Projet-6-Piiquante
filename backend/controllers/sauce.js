@@ -16,7 +16,7 @@ exports.creatSauce = (req, res, next) => {
     });
     sauce
         .save()
-        .then(() => res.status(201).json({ message: "Objet enregistré !!" }))
+        .then(() => res.status(201).json({ message: "Objet enregistré!" }))
         .catch((error) => res.status(400).json({ error }));
 };
 
@@ -59,7 +59,7 @@ exports.modifySauce = (req, res, next) => {
             sauceObject = { ...req.body };
         }
         Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
-            .then(() => res.status(200).json({ message: "Objet modifié !!" }))
+            .then(() => res.status(200).json({ message: "Objet modifié!" }))
             .catch((error) => res.status(400).json({ error }));
     });
 };

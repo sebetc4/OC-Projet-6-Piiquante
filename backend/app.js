@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const helmet = require('helmet');
+const helmet = require("helmet");
 
 const config = require("./config");
 const userRoutes = require("./routes/user");
@@ -21,8 +21,11 @@ mongoose
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(() => console.log("Connexion à MongoDB échouée !"));
 
-// En tête
-app.use(helmet());
+app.use(
+    helmet({
+        crossOriginResourcePolicy: false,
+    })
+);
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -30,10 +33,7 @@ app.use((req, res, next) => {
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
     );
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-    );
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
     next();
 });
 

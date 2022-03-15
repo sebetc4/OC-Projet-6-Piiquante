@@ -9,8 +9,8 @@ const multer = require("../middleware/multer-config");
 router.post("/", auth, multer, sauceCtrl.creatSauce);
 
 // Get
-router.get("/", sauceCtrl.getAllSauces);
-router.get("/:id", sauceCtrl.getOneSauce);
+router.get("/", auth, sauceCtrl.getAllSauces);
+router.get("/:id", auth, sauceCtrl.getOneSauce);
 
 // Modify
 router.put("/:id", auth, multer, sauceCtrl.modifySauce);

@@ -6,17 +6,17 @@ __Construisez une API sécurisée pour une application d'avis gastronomiques__
 
 ## Mise en place:
 
-1- Installation des dépendances: lancer `npm install`
-2- Création du fichier .env à la racine du dossier "backend" en suivant ce modèle:
-
-APP_PORT=...
-DB_NAME=...
-DB_USER=...
-DB_PASSWORD=...
-USER_TOKEN=...
-
-3- Lancement du serveur backend: lancer `npm start`
-
+1- Installation des dépendances: lancer `npm install`<br/>
+2- Création du fichier .env à la racine du dossier "backend" en suivant ce modèle:<br/>
+<br/>
+APP_PORT=...<br/>
+DB_NAME=...<br/>
+DB_USER=...<br/>
+DB_PASSWORD=...<br/>
+USER_TOKEN=...<br/>
+<br/>
+3- Lancement du serveur backend: lancer `npm start`<br/>
+<br/>
 ------
 
 ## Scénario:

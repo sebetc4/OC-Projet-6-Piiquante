@@ -1,7 +1,7 @@
 // Import
 const mongoose = require("mongoose");
 
-// Modèle de sauce
+// Schema de sauce
 const sauceSchema = mongoose.Schema({
     userId: { type: String, required: true },
     name: { type: String, required: true },

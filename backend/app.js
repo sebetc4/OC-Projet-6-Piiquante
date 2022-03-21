@@ -10,6 +10,7 @@ const sauceRoutes = require("./routes/sauce");
 
 const app = express();
 
+// Connection à la DB
 mongoose
     .connect(
         `mongodb+srv://${config.dbUser}:${config.dbPassword}@cluster0.bo3hk.mongodb.net/${config.dbName}?retryWrites=true&w=majority`,
@@ -21,14 +22,14 @@ mongoose
     .then(() => console.log("Connexion à MongoDB réussie !"))
     .catch(err => console.log("Connexion à MongoDB échouée !" + err));
 
-
+// Middleware Helmet
 app.use(
     helmet({
         crossOriginResourcePolicy: false,
     })
 );
 
-// CORS
+// Middleware CORS
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -39,6 +40,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// Middleware récuprétion su body
 app.use(express.json());
 
 // Route des images

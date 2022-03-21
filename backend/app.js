@@ -7,7 +7,6 @@ const helmet = require("helmet");
 const config = require("./config");
 const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
-const auth = require("./middleware/auth");
 
 const app = express();
 

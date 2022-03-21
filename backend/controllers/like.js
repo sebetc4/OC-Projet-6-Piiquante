@@ -10,11 +10,9 @@ exports.likeSauce = (req, res, next) => {
                 return res.status(404).json({ error: new Error("Objet non trouvé!") });
             }
             const likeStatut = req.body.like;
-            console.log(likeStatut)
             let includesInArrays =
                 sauce.usersLiked.includes(req.body.userId) ||
                 sauce.usersDisliked.includes(req.body.userId);
-            console.log(includesInArrays)
             switch (likeStatut) {
                 case 1:
                     if (!includesInArrays) {

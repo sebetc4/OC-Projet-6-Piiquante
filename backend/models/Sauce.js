@@ -1,5 +1,5 @@
 // Import
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Modèle de sauce
 const sauceSchema = mongoose.Schema({
@@ -14,6 +14,6 @@ const sauceSchema = mongoose.Schema({
     dislikes: { type: Number, required: true },
     usersLiked: { type: Array, required: true },
     usersDisliked: { type: Array, required: true },
-  });
+});
 
-module.exports = mongoose.model('Sauce', sauceSchema);
+module.exports = mongoose.model("Sauce", sauceSchema);

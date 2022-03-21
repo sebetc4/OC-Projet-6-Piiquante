@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const config = require("./config");
 const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
+const auth = require("./middleware/auth");
 
 const app = express();
 
@@ -19,7 +20,8 @@ mongoose
         }
     )
     .then(() => console.log("Connexion à MongoDB réussie !"))
-    .catch(() => console.log("Connexion à MongoDB échouée !"));
+    .catch(err => console.log("Connexion à MongoDB échouée !" + err));
+
 
 app.use(
     helmet({
@@ -27,6 +29,7 @@ app.use(
     })
 );
 
+// CORS
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(

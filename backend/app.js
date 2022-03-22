@@ -40,7 +40,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Middleware récuprétion su body
+// Middleware récupèration du body
 app.use(express.json());
 
 // Route des images
